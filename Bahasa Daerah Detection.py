@@ -22,4 +22,4 @@ while True:
 
     # If you want to get the confidence score for the predicted class (the max probability)
     confidence_score = max(class_probabilities[0])
-    print("Confidence Score:", confidence_score)
+    print("Confidence Score:", confidence_score, '\n')
