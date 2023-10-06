@@ -3,6 +3,11 @@ import g4f
 import streamlit as st
 from streamlit_option_menu import option_menu
 
+st.set_page_config(
+    page_title="Nusacular",
+    page_icon="✨"
+    
+)
 
 role = [
     'system',
@@ -14,8 +19,8 @@ role = [
 # navigas sidebar
 with st.sidebar:
     selected = option_menu("Nusacular", 
-                           ['Prediksi Bahasa Daerah', 'Chatbot'],
-                           icons=['flag', 'robot'],
+                           ['Prediksi Bahasa Daerah', 'Chatbot', 'About Us'],
+                           icons=['flag', 'robot', "person-fill"],
                            default_index=0)
 
 with open('model/lrmodel.pckl', 'rb') as model_file:
