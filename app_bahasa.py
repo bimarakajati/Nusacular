@@ -12,9 +12,9 @@ st.set_page_config(
 # Sidebar
 with st.sidebar:
     selected = option_menu(
-        "Nusacular", 
-        ['Prediksi Bahasa Daerah', 'Chatbot', 'About Us'], 
-        icons=['flag', 'robot', "person-fill"], 
+        "Nusacular",
+        ['Prediksi Bahasa Daerah', 'Chatbot', 'About Us'],
+        icons=['flag', 'robot', "person-fill"],
         default_index=0
     )
 
@@ -27,7 +27,7 @@ if selected == "Prediksi Bahasa Daerah":
     input_kata = st.text_input(label="Masukkan kata")
     prediksi = st.button ("Prediksi")
 
-    if prediksi:
+    if prediksi or input_kata != "":
         predicted_language = loaded_model.predict([input_kata])
 
         class_probabilities = loaded_model.predict_proba([input_kata])
@@ -82,7 +82,6 @@ elif selected == "Chatbot":
     if messages:
         if st.button("Clear Database"):
             clear_database()
-            # st.success("Database cleared successfully!")
             st.experimental_rerun()  # Reload the Streamlit app
 
 else:
@@ -91,7 +90,12 @@ else:
     # About Us
     st.markdown("""
     Dibuat pada 4 Oktober 2023, Nusacular (Nusantara Vernacular) adalah sebuah aplikasi yang dapat memprediksi bahasa daerah dan juga dapat digunakan sebagai chatbot.
-    
+
+    Bahasa daerah yang dapat diprediksi oleh aplikasi ini adalah:
+    - Bahasa Jawa
+    - Bahasa Sunda
+    - Bahasa Batak Toba
+
     Aplikasi ini dibuat oleh:
     |             Name            |      NIM       |
     | --------------------------- | -------------- |
