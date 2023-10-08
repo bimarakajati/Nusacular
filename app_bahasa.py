@@ -13,7 +13,7 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         "Nusacular",
-        ['Prediksi Bahasa Daerah', 'Chatbot', 'About Us'],
+        ['Deteksi Bahasa Daerah', 'Chatbot', 'About Us'],
         icons=['flag', 'robot', "person-fill"],
         default_index=0
     )
@@ -21,11 +21,11 @@ with st.sidebar:
 with open('model/lrmodel.pckl', 'rb') as model_file:
     loaded_model = pickle.load(model_file)
 
-if selected == "Prediksi Bahasa Daerah":
-    st.title("Prediksi Bahasa Daerah")
+if selected == "Deteksi Bahasa Daerah":
+    st.title("Deteksi Bahasa Daerah")
 
-    input_kata = st.text_input(label="Masukkan kata")
-    prediksi = st.button ("Prediksi")
+    input_kata = st.text_input(label="Masukkan kalimat:")
+    prediksi = st.button ("Deteksi")
 
     if prediksi or input_kata != "":
         predicted_language = loaded_model.predict([input_kata])
