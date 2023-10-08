@@ -1,7 +1,7 @@
 import pickle
 
 # Model list
-model = ['lrmodel', 'mnbmodel', 'dtmodel']
+model = ['lrmodel', 'mnbmodel', 'dtmodel', 'adamodel', 'rfmodel', 'mplcmodel']
 
 # Load the pickled model
 with open(f'model/{model[0]}.pckl', 'rb') as model_file:
