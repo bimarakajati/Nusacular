@@ -2,3 +2,5 @@ __pycache__/
 backup/
 datasets/
 chat_history.db
+test.py
+Trainer.ipynb
