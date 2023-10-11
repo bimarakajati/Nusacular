@@ -54,7 +54,7 @@ def chatbot():
         while True:
             response = g4f.ChatCompletion.create(
                         model=g4f.models.default,
-                        provider=g4f.Provider.ChatgptAi,
+                        provider=g4f.Provider.You,
                         messages=[{"role": role[1], "content": prompt}]
                     )
             if response == '':
@@ -75,7 +75,7 @@ def chatbot():
     if messages:
         if st.button("Clear Database"):
             clear_database()
-            st.experimental_rerun()  # Reload the Streamlit app
+            st.experimental_rerun() # Reload the Streamlit app
 
 def about_us():
     st.title("About Us")
