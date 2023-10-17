@@ -34,5 +34,3 @@ This project aims to develop a system capable of detecting regional languages or
 - https://github.com/IndoNLP/nusax
 - https://github.com/Wikidepia/indonesian_datasets
 - https://github.com/xtekky/gpt4free
-- https://github.com/ssut/py-googletrans
-- https://github.com/pndurette/gTTS
