@@ -10,6 +10,9 @@ from nltk import word_tokenize
 import numpy as np
 import pandas as pd
 import streamlit as st
+import nltk
+
+nltk.download('punkt')
 
 def load_data(filedir):
     df = pd.read_csv(filedir)
