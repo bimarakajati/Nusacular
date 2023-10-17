@@ -29,7 +29,7 @@ def hyperparam_tuning(xtrain, ytrain, xvalid, yvalid, classifier, param_grid):
     clf = clf.fit(x, y)
     return clf
 
-def train_and_test(lang, directory="./datasets/nusax/sentiment/", feature="BoW", classifier="nb"):
+def train_and_test(lang, directory="./sentiment/", feature="BoW", classifier="nb"):
     xtrain, ytrain = load_data(directory + lang +"/train.csv")
     xvalid, yvalid = load_data(directory + lang + "/valid.csv")
     xtest, ytest = load_data(directory + lang + "/test.csv")
