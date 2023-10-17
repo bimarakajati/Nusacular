@@ -8,14 +8,14 @@ from nusacular.about import about_us
 from streamlit_option_menu import option_menu
 
 st.set_page_config(
-    page_title="Nusacular",
+    page_title="Nusacular Testing",
     page_icon="✨"
 )
 
 with st.sidebar:
     selected = option_menu(
         "Nusacular",
-        ['Deteksi Bahasa Daerah', 'Terjemahan', 'Suara', 'Chatbot', 'Sentimen', 'About Us'],
+        ['Deteksi Bahasa Daerah', 'Terjemahan', 'Suara', 'Chatbot', 'Sentimen', 'Tentang Kami'],
         icons=['flag', 'translate', 'soundwave', 'robot', 'emoji-smile', 'person-fill'],
         default_index=0
     )
