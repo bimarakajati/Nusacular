@@ -10,8 +10,8 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         "Nusacular",
-        ['Deteksi Bahasa Daerah', 'Chatbot', 'About Us'],
-        icons=['flag', 'robot', "person-fill"],
+        ['Deteksi Bahasa Daerah', 'Chatbot', 'Sentimen', 'About Us'],
+        icons=['flag', 'robot', 'emoji-smile', 'person-fill'],
         default_index=0
     )
 
@@ -20,6 +20,9 @@ if selected == "Deteksi Bahasa Daerah":
 
 elif selected == "Chatbot":
     chatbot()
+
+elif selected == "Sentimen":
+    sentimen()
 
 else:
     about_us()
