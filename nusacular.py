@@ -52,9 +52,9 @@ def chatbot():
         role = ["system", "user", "assistant"]
 
         response = g4f.ChatCompletion.create(
-                    model=g4f.models.default,
-                    provider=g4f.Provider.ChatgptAi,
-                    messages=[{"role": role[1], "content": prompt}]
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": role[1], "content": prompt}],
+                    # provider=g4f.Provider.ChatgptAi
                 )
         print('Response:', response, '\n')
 
