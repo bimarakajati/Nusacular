@@ -1,4 +1,4 @@
-# Nusacular (Nusantara Vernacular)
+# Bahasa Daerah (Indonesian Regional Language) Detection Using NLP and Machine Learning
 This project aims to develop a system capable of detecting regional languages or dialects from text. We will collect a dataset containing text in various regional languages or dialects and train machine learning models to recognize and classify them. The outcome will be useful for text processing applications that require an understanding of regional languages and for the preservation of local culture.
 
 ## 📷 Screenshot
@@ -33,6 +33,3 @@ This project aims to develop a system capable of detecting regional languages or
 - https://github.com/akhiilkasare/Language-Detection-Using-NLP-and-Machine-Learning
 - https://github.com/IndoNLP/nusax
 - https://github.com/Wikidepia/indonesian_datasets
-- https://github.com/xtekky/gpt4free
-- https://github.com/ssut/py-googletrans
-- https://github.com/pndurette/gTTS
