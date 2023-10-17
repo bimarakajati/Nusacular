@@ -24,18 +24,12 @@ def chatbot():
         # Define roles for messages
         role = ["system", "user", "assistant"]
 
-        while True:
-            response = g4f.ChatCompletion.create(
-                        model=g4f.models.default,
-                        provider=g4f.Provider.You,
-                        messages=[{"role": role[1], "content": prompt}]
-                    )
-            if response == '':
-                print("Empty response, retrying...")
-                continue
-            else:
-                print('Response:', response, '\n')
-                break
+        response = g4f.ChatCompletion.create(
+                    model="gpt-3.5-turbo",
+                    messages=[{"role": role[1], "content": prompt}],
+                    # provider=g4f.Provider.ChatgptAi
+                )
+        print('Response:', response, '\n')
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
