@@ -56,9 +56,12 @@ def chatbot():
                     messages=[{"role": role[1], "content": prompt}],
                     provider=g4f.Provider.Bard,
                     cookies={
-                        "__Secure-1PSID": st.secrets["1PSID"],
-                        "__Secure-1PSIDTS": st.secrets["1PSIDTS"],
-                        "__Secure-1PSIDCC": st.secrets["1PSIDCC"]
+                        # "__Secure-1PSID": st.secrets["1PSID"],
+                        # "__Secure-1PSIDTS": st.secrets["1PSIDTS"],
+                        # "__Secure-1PSIDCC": st.secrets["1PSIDCC"]
+                        "__Secure-1PSID": 'bgjOeEh9zBaXR25UIbLMtUTKbD9E9PLVewpXiQLIIPDFrZpErWxxjSpgOeMePmoQs1Rnyw.',
+                        "__Secure-1PSIDTS": 'sidts-CjIB3e41hbPuCxanLJXbinXIXaTGQbkO1gVSaFEYa8jCjP96flM3gD1oewjLd9aeQgc1dRAA',
+                        "__Secure-1PSIDCC": 'ACA-OxNW8WdrL8e7V2XxsS6EuzyIRdczWkpvAU-g2FXcJV03IAhlmkwpHGR4LMstBymJf7xMfA'
                     },
                     auth=True
                 )
