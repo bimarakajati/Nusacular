@@ -52,9 +52,15 @@ def chatbot():
         role = ["system", "user", "assistant"]
 
         response = g4f.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
+                    model=g4f.models.default,
                     messages=[{"role": role[1], "content": prompt}],
-                    # provider=g4f.Provider.ChatgptAi
+                    provider=g4f.Provider.Bard,
+                    cookies={
+                        "__Secure-1PSID": st.secrets["1PSID"],
+                        "__Secure-1PSIDTS": st.secrets["1PSIDTS"],
+                        "__Secure-1PSIDCC": st.secrets["1PSIDCC"]
+                    },
+                    auth=True
                 )
         print('Response:', response, '\n')
 
