@@ -1,7 +1,6 @@
 import g4f
 import pickle
 import streamlit as st
-import google.generativeai as palm
 from local_db import *
 
 with open('model/lrmodel.pckl', 'rb') as model_file:
@@ -49,25 +48,22 @@ def chatbot():
         # Add user message to the database
         insert_message("user", prompt)
 
-        palm.configure(api_key=st.secrets["API_KEY"])
-        models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-        model = models[0].name
+        # Define roles for messages
+        role = ["system", "user", "assistant"]
 
-        response = palm.generate_text(
-            model=model,
-            prompt=prompt,
-            temperature=0,
-            # The maximum length of the response
-            max_output_tokens=800,
-        )
-        print('Response:', response.result, '\n')
+        response = g4f.ChatCompletion.create(
+                    model=g4f.models.gpt_4,
+                    messages=[{"role": role[1], "content": prompt}],
+                    provider=g4f.Provider.GeekGpt,
+                )
+        print('Response:', response, '\n')
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
-            st.markdown(response.result)
+            st.markdown(response)
 
         # Add assistant response to the database
-        insert_message("assistant", response.result)
+        insert_message("assistant", response)
 
     # Button to clear the database (conditionally displayed)
     if messages:
