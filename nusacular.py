@@ -1,6 +1,7 @@
 import g4f
 import pickle
 import streamlit as st
+import google.generativeai as palm
 from local_db import *
 
 with open('model/lrmodel.pckl', 'rb') as model_file:
@@ -48,31 +49,25 @@ def chatbot():
         # Add user message to the database
         insert_message("user", prompt)
 
-        # Define roles for messages
-        role = ["system", "user", "assistant"]
+        palm.configure(api_key=st.secrets["API_KEY"])
+        models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
+        model = models[0].name
 
-        response = g4f.ChatCompletion.create(
-                    model=g4f.models.default,
-                    messages=[{"role": role[1], "content": prompt}],
-                    provider=g4f.Provider.Bard,
-                    cookies={
-                        # "__Secure-1PSID": st.secrets["1PSID"],
-                        # "__Secure-1PSIDTS": st.secrets["1PSIDTS"],
-                        # "__Secure-1PSIDCC": st.secrets["1PSIDCC"]
-                        "__Secure-1PSID": 'bgjOeEh9zBaXR25UIbLMtUTKbD9E9PLVewpXiQLIIPDFrZpErWxxjSpgOeMePmoQs1Rnyw.',
-                        "__Secure-1PSIDTS": 'sidts-CjIB3e41hbPuCxanLJXbinXIXaTGQbkO1gVSaFEYa8jCjP96flM3gD1oewjLd9aeQgc1dRAA',
-                        "__Secure-1PSIDCC": 'ACA-OxNW8WdrL8e7V2XxsS6EuzyIRdczWkpvAU-g2FXcJV03IAhlmkwpHGR4LMstBymJf7xMfA'
-                    },
-                    auth=True
-                )
-        print('Response:', response, '\n')
+        response = palm.generate_text(
+            model=model,
+            prompt=prompt,
+            temperature=0,
+            # The maximum length of the response
+            max_output_tokens=800,
+        )
+        print('Response:', response.result, '\n')
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
-            st.markdown(response)
+            st.markdown(response.result)
 
         # Add assistant response to the database
-        insert_message("assistant", response)
+        insert_message("assistant", response.result)
 
     # Button to clear the database (conditionally displayed)
     if messages:
