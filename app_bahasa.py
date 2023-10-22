@@ -1,5 +1,7 @@
 import streamlit as st
-from nusacular import *
+from nusacular.deteksi import deteksi
+from nusacular.chatbot import chatbot
+from nusacular.about import about_us
 from streamlit_option_menu import option_menu
 
 st.set_page_config(
@@ -10,7 +12,7 @@ st.set_page_config(
 with st.sidebar:
     selected = option_menu(
         "Nusacular",
-        ['Deteksi Bahasa Daerah', 'Chatbot', 'About Us'],
+        ['Deteksi Bahasa Daerah', 'Chatbot', 'Tentang Kami'],
         icons=['flag', 'robot', "person-fill"],
         default_index=0
     )
