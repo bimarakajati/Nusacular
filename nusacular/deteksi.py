@@ -38,6 +38,7 @@ def deteksi():
             ["Sundanese", class_probabilities[0][3]]
         ]
         result.sort(key=lambda x: x[1], reverse=True)
+
         with st.expander("Lihat detail"):
             for i in range(len(result)):
                 st.write(f"{result[i][0]}:")

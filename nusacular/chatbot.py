@@ -27,7 +27,7 @@ def chatbot():
         response = g4f.ChatCompletion.create(
                     model=g4f.models.gpt_4,
                     messages=[{"role": role[1], "content": prompt}],
-                    provider=g4f.Provider.You,
+                    provider=g4f.Provider.GptGo,
                 )
         print('Response:', response, '\n')
 
