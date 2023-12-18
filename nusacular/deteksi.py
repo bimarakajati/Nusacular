@@ -1,7 +1,8 @@
 import pickle
 import streamlit as st
 
-with open('model/lrmodel.pckl', 'rb') as model_file:
+# with open('model/lrmodel.pckl', 'rb') as model_file:
+with open('model/mlpmodel.sav', 'rb') as model_file:
     loaded_model = pickle.load(model_file)
 
 def deteksi():
@@ -22,7 +23,7 @@ def deteksi():
         st.write("Confidence Score:", confidence_score)
 
         with st.expander("Lihat detail"):
-            bahasa = ['Bataknese', 'Indonesian', 'Javanese', 'Sundanese']
+            bahasa = ['Aceh', 'Bali', 'Banjar', 'Bugis', 'Jawa', 'Madura', 'Minang', 'Ngaju', 'Sunda', 'Batak']
             for i in range(len(bahasa)):
                 st.write(f'{bahasa[i]}:')
                 st.progress(class_probabilities[0][i])

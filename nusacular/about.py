@@ -8,9 +8,16 @@ def about_us():
     Dibuat pada 4 Oktober 2023, Nusacular (Nusantara Vernacular) adalah sebuah aplikasi yang dapat mendeteksi atau menerjemahkan bahasa daerah, mengubah teks menjadi suara, sentimen analisis dan juga dapat digunakan sebagai chatbot.
 
     Bahasa daerah yang dapat diprediksi oleh aplikasi ini adalah:
+    - Bahasa Aceh
+    - Bahasa Bali
+    - Bahasa Banjar (Kalimantan Selatan)
+    - Bahasa Bugis (Sulawesi Selatan)
     - Bahasa Jawa
+    - Bahasa Madura
+    - Bahasa Minang (Sumatera Utara)
+    - Bahasa Ngaju (Dayak)
     - Bahasa Sunda
-    - Bahasa Batak Toba
+    - Bahasa Batak (Toba)
 
     Aplikasi ini dibuat oleh:
     |             Name            |      NIM       |
