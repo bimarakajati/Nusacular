@@ -16,7 +16,7 @@ def text2speech():
     teks_asal = st.text_input(label="Masukkan kalimat:")
     prediksi = st.button ("Suarakan")
 
-    if prediksi:
+    if prediksi or teks_asal != "":
         suara = gTTS(text=teks_asal, lang=bahasa, slow=False)
         # Simpan suara ke dalam file
         suara.save("output.mp3")
