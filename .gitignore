@@ -1,0 +1,14 @@
+__pycache__/
+.venv/
+.streamlit/
+
+backup/
+chatbot/
+datasets/
+notebook/
+reference/
+
+chat_history.db
+test.py
+Trainer.ipynb
+output.mp3
