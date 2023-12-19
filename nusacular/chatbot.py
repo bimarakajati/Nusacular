@@ -1,6 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
-from local_db import *
+from nusacular.local_db import *
 
 genai.configure(api_key=st.secrets["gemini_api_key"])
 model = genai.GenerativeModel('gemini-pro')
