@@ -1,9 +1,22 @@
 __pycache__/
 .venv/
+<<<<<<< HEAD
+.streamlit/
+
+=======
+>>>>>>> master
 backup/
+chatbot/
 datasets/
+notebook/
+reference/
+
 chat_history.db
 test.py
 Trainer.ipynb
+<<<<<<< HEAD
+output.mp3
+=======
 output.mp3
 chatbot/
+>>>>>>> master

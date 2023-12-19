@@ -6,13 +6,20 @@ This project aims to develop a system capable of detecting regional languages or
 ![Web Interface](ss/chatbot.png)
 
 ## 🎌 Supported Regional Languages:
+- Acehnese
+- Balinese
+- Banjarese
+- Buginese
 - Javanese
 - Sundanese
-- Bataknese
+- Madurese
+- Minangnese
+- Ngajunese
+- Toba Batak
 
 ## 🔮 Future Improvements:
-- [ ] Increase model accuracy
-- [ ] Add more language
+- [x] Increase model accuracy
+- [x] Add more language
 - [ ] Feature to create an account
 - [ ] Use an online database
 
@@ -32,5 +39,3 @@ This project aims to develop a system capable of detecting regional languages or
 ## 📙 Reference:
 - https://github.com/akhiilkasare/Language-Detection-Using-NLP-and-Machine-Learning
 - https://github.com/IndoNLP/nusax
-- https://github.com/Wikidepia/indonesian_datasets
-- https://github.com/xtekky/gpt4free

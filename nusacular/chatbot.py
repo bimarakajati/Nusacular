@@ -1,6 +1,9 @@
 import streamlit as st
-import g4f
+import google.generativeai as genai
 from local_db import *
+
+genai.configure(api_key=st.secrets["gemini_api_key"])
+model = genai.GenerativeModel('gemini-pro')
 
 def chatbot():
     st.title("Nusacular Bot")
@@ -21,22 +24,15 @@ def chatbot():
         # Add user message to the database
         insert_message("user", prompt)
 
-        # Define roles for messages
-        role = ["system", "user", "assistant"]
-
-        response = g4f.ChatCompletion.create(
-                    model=g4f.models.gpt_4,
-                    messages=[{"role": role[1], "content": prompt}],
-                    provider=g4f.Provider.ChatgptDemo,
-                )
-        print('Response:', response, '\n')
+        response = model.generate_content(prompt)
+        print('Response:', response.text, '\n')
 
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
-            st.markdown(response)
+            st.markdown(response.text)
 
         # Add assistant response to the database
-        insert_message("assistant", response)
+        insert_message("assistant", response.text)
 
     # Button to clear the database (conditionally displayed)
     if messages:
