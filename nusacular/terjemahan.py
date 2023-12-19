@@ -23,7 +23,7 @@ def translate():
     teks_asal = st.text_input(label="Masukkan kalimat:")
     prediksi = st.button ("Terjemahkan")
 
-    if prediksi:
+    if prediksi or teks_asal != "":
         terjemahan = terjemahkan(teks_asal, bahasa_sumber, bahasa_target)
 
         # print('Selected language:', bahasa_target)
