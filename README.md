@@ -1,8 +1,21 @@
 # Nusacular (Nusantara Vernacular)
 This project aims to develop a system capable of detecting regional languages or dialects from text. We will collect a dataset containing text in various regional languages or dialects and train machine learning models to recognize and classify them. The outcome will be useful for text processing applications that require an understanding of regional languages and for the preservation of local culture.
 
-## 📷 Screenshot
+## 📷 Features
+### Regional Language Detection:
+Made using a Naive Bayes classifier and a TF-IDF vectorizer. The model is trained using a dataset from NusaX containing 10,000 sentences in 10 regional languages. The model is able to detect 10 regional languages correctly. 
 ![Web Interface](ss/detection.png)
+
+### Regional Language Translation:
+Made using the GoogleTrans library. The library is able to translate from Indonesian into Javanese and Sundanese.
+![Web Interface](ss/translate.png)
+
+### Text to Speech:
+Made using the gTTS (Google Text-to-Speech) library. The library is able to convert text into speech in Javanese and Sundanese languages.
+![Web Interface](ss/text2speech.png)
+
+### Chatbot:
+Made using the Gemini (Google Generative AI) API. The user can chat with the chatbot in the context of regional languages.
 ![Web Interface](ss/chatbot.png)
 
 ## 🎌 Supported Regional Languages:
