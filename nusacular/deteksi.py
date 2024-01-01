@@ -19,7 +19,7 @@ def deteksi():
         print("Class probabilities:", class_probabilities)
 
         confidence_score = max(class_probabilities[0])
-        st.write("Confidence Score:", confidence_score)
+        st.write("Probabilities Score:", confidence_score)
 
         with st.expander("Lihat detail"):
             bahasa = ['Aceh', 'Bali', 'Banjar', 'Bugis', 'Jawa', 'Madura', 'Minang', 'Ngaju', 'Sunda', 'Batak']
