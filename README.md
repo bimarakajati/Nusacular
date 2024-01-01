@@ -6,6 +6,10 @@ This project aims to develop a system capable of detecting regional languages or
 Made using a Naive Bayes classifier and a TF-IDF vectorizer. The model is trained using a dataset from NusaX containing 10,000 sentences in 10 regional languages. The model is able to detect 10 regional languages correctly. 
 ![Web Interface](ss/detection.png)
 
+### Chatbot:
+Made using the Gemini (Google Generative AI) API. The user can chat with the chatbot in the context of regional languages.
+![Web Interface](ss/chatbot.png)
+
 ### Regional Language Translation:
 Made using the GoogleTrans library. The library is able to translate from Indonesian into Javanese and Sundanese.
 ![Web Interface](ss/translate.png)
@@ -14,9 +18,9 @@ Made using the GoogleTrans library. The library is able to translate from Indone
 Made using the gTTS (Google Text-to-Speech) library. The library is able to convert text into speech in Javanese and Sundanese languages.
 ![Web Interface](ss/text2speech.png)
 
-### Chatbot:
-Made using the Gemini (Google Generative AI) API. The user can chat with the chatbot in the context of regional languages.
-![Web Interface](ss/chatbot.png)
+### Sentiment Analysis:
+The feature is based on this [notebook](https://github.com/IndoNLP/nusax/blob/main/code/notebook/sentiment_analysis_nusax_classical.ipynb). Users can input a sentence, and the model will predict the sentiment of the given sentence.
+![Web Interface](ss/sentiment.png)
 
 ## 🎌 Supported Regional Languages:
 - Acehnese
@@ -35,11 +39,6 @@ Made using the Gemini (Google Generative AI) API. The user can chat with the cha
 - [x] Add more language
 - [ ] Feature to create an account
 - [ ] Use an online database
-
-## 📝 Note:
-    Feel free to fork this repository, modify the code, and create a pull request. I will be happy to review and merge it.
-
-    If you have any questions, please feel free to contact me.
 
 ## ✨ Author:
 |             Name            |      NIM       |
